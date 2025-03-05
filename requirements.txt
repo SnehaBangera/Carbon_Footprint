@@ -1,0 +1,9 @@
+yfinance
+tensorflow
+scikit-learn
+requests
+python-dotenv
+streamlit
+matplotlib
+lime
+plotly
