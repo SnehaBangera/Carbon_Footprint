@@ -3,22 +3,11 @@ from src.carbon_utils import load_emission_factors, categorize_emissions, send_e
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-hide_elements = """
+st.markdown("""
     <style>
-    /* Hide the "Fork" and GitHub icon */
-    [title="Fork"] {display: none !important;}
-    
-    /* Hide Streamlit footer */
-    footer {visibility: hidden;}
-    
-    /* Hide the batch icon */
-    [class*="st-batch"] {display: none;}
-    
-    /* Hide the top right hamburger menu */
-    #MainMenu {visibility: hidden;}
+        header {visibility: hidden;}
     </style>
-"""
-st.markdown(hide_elements, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
 st.title("🌍 Carbon Footprint Calculator")
 
