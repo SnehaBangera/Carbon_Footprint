@@ -8,7 +8,7 @@ from email.mime.image import MIMEImage
 
 # Load emission factors from CSV
 def load_emission_factors():
-    data = pd.read_csv('Carbon_Emission_Factors_195_Countries.csv')
+    data = pd.read_csv("Carbon_Emission_Factors_195_Countries.csv")
     emission_factors = {
         row['Country']: {
             "Transportation": row['Transportation (kg CO2 per km)'],
