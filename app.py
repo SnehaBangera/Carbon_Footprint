@@ -3,6 +3,17 @@ from src.carbon_utils import load_emission_factors, categorize_emissions, send_e
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+st.set_page_config(initial_sidebar_state="collapsed")
+hide_menu_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .st-emotion-cache-16txtl3 {display: none !important;}
+    </style>
+"""
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 st.title("🌍 Carbon Footprint Calculator")
 
 def carbon_footprint_calculator():
