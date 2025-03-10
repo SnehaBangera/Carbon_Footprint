@@ -3,19 +3,18 @@ from src.carbon_utils import load_emission_factors, categorize_emissions, send_e
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-# Hide Streamlit footer, batch icon, fork, and Git icons
 hide_elements = """
     <style>
-    /* Hide the Streamlit footer */
+    /* Hide the "Fork" and GitHub icon */
+    [title="Fork"] {display: none !important;}
+    
+    /* Hide Streamlit footer */
     footer {visibility: hidden;}
     
     /* Hide the batch icon */
     [class*="st-batch"] {display: none;}
-
-    /* Hide the fork and Git icons */
-    [title="View source"] {display: none;}
-
-    /* Optionally, hide the top right hamburger menu */
+    
+    /* Hide the top right hamburger menu */
     #MainMenu {visibility: hidden;}
     </style>
 """
