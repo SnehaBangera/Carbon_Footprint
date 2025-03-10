@@ -5,22 +5,34 @@ import plotly.express as px
 import streamlit as st
 
 # Hide Streamlit's default UI elements
+
+
+# Apply custom CSS to hide Streamlit branding and footer
 hide_streamlit_style = """
     <style>
-    #MainMenu {visibility: hidden;} /* Hides the hamburger menu */
-    footer {visibility: hidden !important;} /* Hides the footer */
-    header {visibility: hidden;} /* Hides the Streamlit header */
-    .viewerBadge_container__1QSob {display: none;} /* Hides the "Fork" button */
-    .st-cf, .st-c0 {display: none;} /* Hides Streamlit branding and profile badge */
-    
-    /* Hides custom footer text */
-    div.block-container div:first-child div[data-testid="stMarkdownContainer"] p {
-        visibility: hidden;
-        height: 0px;
+    /* Hide the hamburger menu, footer, and Streamlit header */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden !important;}
+    header {visibility: hidden;}
+
+    /* Hide the "Fork" button */
+    .viewerBadge_container__1QSob {display: none;}
+
+    /* Hide the Streamlit watermark */
+    .st-cf, .st-c0, .st-bx {display: none;}
+
+    /* Hide custom footer text like "Created by Sneha Bangera" */
+    footer:has(p:contains('Created by Sneha Bangera')) {
+        display: none !important;
     }
+    
+    /* Additional generic footer removal */
+    footer p {display: none !important;}
+    footer:after {content:''; display:block; height:0; visibility:hidden;}
     </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 st.title("🌍 Carbon Footprint Calculator")
 
 def carbon_footprint_calculator():
