@@ -10,11 +10,10 @@ hide_streamlit_style = """
     #MainMenu {visibility: hidden;} /* Hides the hamburger menu */
     footer {visibility: hidden;} /* Hides the footer */
     header {visibility: hidden;} /* Hides the Streamlit header */
-    .viewerBadge_container__1QSob {visibility: hidden;} /* Hides the "Fork" button */
+    .viewerBadge_container__1QSob {display: none;} /* Hides the "Fork" button */
+    .st-cf, .st-c0 {display: none;} /* Hides Streamlit branding and profile badge */
     </style>
 """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.title("🌍 Carbon Footprint Calculator")
 
