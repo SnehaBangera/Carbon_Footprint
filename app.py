@@ -2,7 +2,20 @@ import streamlit as st
 from src.carbon_utils import load_emission_factors, categorize_emissions, send_email_smtp
 import matplotlib.pyplot as plt
 import plotly.express as px
+import streamlit as st
 
+# Hide Streamlit's default UI elements
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;} /* Hides the hamburger menu */
+    footer {visibility: hidden;} /* Hides the footer */
+    header {visibility: hidden;} /* Hides the Streamlit header */
+    .viewerBadge_container__1QSob {visibility: hidden;} /* Hides the "Fork" button */
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 st.title("🌍 Carbon Footprint Calculator")
 
 def carbon_footprint_calculator():
