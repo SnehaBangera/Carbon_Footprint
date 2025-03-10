@@ -3,16 +3,23 @@ from src.carbon_utils import load_emission_factors, categorize_emissions, send_e
 import matplotlib.pyplot as plt
 import plotly.express as px
 
-st.set_page_config(initial_sidebar_state="collapsed")
-hide_menu_style = """
+# Hide Streamlit footer, batch icon, fork, and Git icons
+hide_elements = """
     <style>
-    #MainMenu {visibility: hidden;}
+    /* Hide the Streamlit footer */
     footer {visibility: hidden;}
-    header {visibility: hidden;}
-    .st-emotion-cache-16txtl3 {display: none !important;}
+    
+    /* Hide the batch icon */
+    [class*="st-batch"] {display: none;}
+
+    /* Hide the fork and Git icons */
+    [title="View source"] {display: none;}
+
+    /* Optionally, hide the top right hamburger menu */
+    #MainMenu {visibility: hidden;}
     </style>
 """
-st.markdown(hide_menu_style, unsafe_allow_html=True)
+st.markdown(hide_elements, unsafe_allow_html=True)
 
 st.title("🌍 Carbon Footprint Calculator")
 
