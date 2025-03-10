@@ -58,7 +58,8 @@ def carbon_footprint_calculator():
 
     with col2:
         st.subheader("Number of meals per day")
-        diet = st.number_input("Diet", 0, key="diet_input")
+        diet = st.number_input("Number of meals per day", min_value=0, max_value=10, step=1, key="diet_input")
+
 
         st.subheader("Daily waste in KG")
         waste = st.slider("Waste", 0.0, 100.0, key="waste_input")
