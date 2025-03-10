@@ -2,36 +2,6 @@ import streamlit as st
 from src.carbon_utils import load_emission_factors, categorize_emissions, send_email_smtp
 import matplotlib.pyplot as plt
 import plotly.express as px
-import streamlit as st
-
-# Hide Streamlit's default UI elements
-
-
-# Apply custom CSS to hide Streamlit branding and footer
-hide_streamlit_style = """
-    <style>
-    /* Hide the hamburger menu, footer, and Streamlit header */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden !important;}
-    header {visibility: hidden;}
-
-    /* Hide the "Fork" button */
-    .viewerBadge_container__1QSob {display: none;}
-
-    /* Hide the Streamlit watermark */
-    .st-cf, .st-c0, .st-bx {display: none;}
-
-    /* Hide custom footer text like "Created by Sneha Bangera" */
-    footer:has(p:contains('Created by Sneha Bangera')) {
-        display: none !important;
-    }
-    
-    /* Additional generic footer removal */
-    footer p {display: none !important;}
-    footer:after {content:''; display:block; height:0; visibility:hidden;}
-    </style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.title("🌍 Carbon Footprint Calculator")
 
@@ -58,8 +28,7 @@ def carbon_footprint_calculator():
 
     with col2:
         st.subheader("Number of meals per day")
-        diet = st.number_input("Number of meals per day", min_value=0, max_value=10, step=1, key="diet_input")
-
+        diet = st.number_input("Diet", 0, key="diet_input")
 
         st.subheader("Daily waste in KG")
         waste = st.slider("Waste", 0.0, 100.0, key="waste_input")
