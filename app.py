@@ -8,10 +8,16 @@ import streamlit as st
 hide_streamlit_style = """
     <style>
     #MainMenu {visibility: hidden;} /* Hides the hamburger menu */
-    footer {visibility: hidden;} /* Hides the footer */
+    footer {visibility: hidden !important;} /* Hides the footer */
     header {visibility: hidden;} /* Hides the Streamlit header */
     .viewerBadge_container__1QSob {display: none;} /* Hides the "Fork" button */
     .st-cf, .st-c0 {display: none;} /* Hides Streamlit branding and profile badge */
+    
+    /* Hides custom footer text */
+    div.block-container div:first-child div[data-testid="stMarkdownContainer"] p {
+        visibility: hidden;
+        height: 0px;
+    }
     </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
